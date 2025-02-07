@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../Layout";
 import Home from "../pages/dashboard/Home";
 import Todos from "../pages/dashboard/Todos";
-import Login from "../pages/auth/Login";
+
 
 export default function CustomRoutes() {
   return (
@@ -13,7 +13,7 @@ export default function CustomRoutes() {
         <Route index element={<Home />} />
         <Route path="todos" element={<Todos />} />
       </Route>
-      <Route path="login" element={<Login />} />
+      {/* <Route path="login" element={<Login />} /> */}
     </Routes>
   );
 }
