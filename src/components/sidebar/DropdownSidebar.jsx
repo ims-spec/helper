@@ -1,6 +1,12 @@
 import React from "react";
 
+import supabase from "../../providers/supabase";
+
 export default function DropdownSidebar() {
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
+
   return (
     <div className="dropdown">
       <a
@@ -38,9 +44,9 @@ export default function DropdownSidebar() {
           <hr className="dropdown-divider" />
         </li>
         <li>
-          <a className="dropdown-item" href="#">
+          <button className="dropdown-item" onClick={handleLogout}>
             Sign out
-          </a>
+          </button>
         </li>
       </ul>
     </div>
