@@ -1,6 +1,6 @@
-import DropdownTheme from "./DropdownTheme";
+
 import Login from "./Login";
-import ToggleTheme from "./ToggleTheme";
+
 
 const Auth = () => {
   return (

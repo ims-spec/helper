@@ -1,10 +1,12 @@
-import React from "react";
+import { replace, useNavigate } from "react-router";
 
 import supabase from "../../providers/supabase";
 
 export default function DropdownSidebar() {
+  const navigate = useNavigate();
   const handleLogout = async () => {
     await supabase.auth.signOut();
+    navigate('/', {replace: true})
   };
 
   return (

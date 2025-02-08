@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import supabase from "../../providers/supabase";
+
 import ToggleTheme from "./ToggleTheme";
 
 export default function Login() {
@@ -9,7 +10,6 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Функция для входа
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -22,7 +22,6 @@ export default function Login() {
       });
 
       if (error) throw error;
-      
     } catch (error) {
       setError(error.message);
     } finally {
@@ -43,7 +42,7 @@ export default function Login() {
               className="form-control"
               id="floatingInput"
               placeholder="name@example.com"
-              onChange={(e)=> setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="floatingInput">Email address</label>
           </div>
@@ -54,7 +53,7 @@ export default function Login() {
               className="form-control"
               id="floatingPassword"
               placeholder="Password"
-              onChange={(e)=> setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label htmlFor="floatingPassword">Password</label>
           </div>
