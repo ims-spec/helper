@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CustomRoutes from "./routers/CustomRoutes";
 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import Auth from "./pages/auth/Auth";
 
 import supabase from "./providers/supabase";

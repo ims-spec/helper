@@ -40,11 +40,11 @@ export default function Login() {
             <input
               type="email"
               className="form-control"
-              id="floatingInput"
+              id="floatingInput1"
               placeholder="name@example.com"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label htmlFor="floatingInput">Email address</label>
+            <label htmlFor="floatingInput1">Email address</label>
           </div>
 
           <div className="form-floating">
