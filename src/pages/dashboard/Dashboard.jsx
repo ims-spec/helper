@@ -8,7 +8,7 @@ export default function Dashboard() {
   return (
     <div>
       <Header />
-      <div className="d-flex">
+      <div className="d-flex justify-content-between">
         <Boostrap />
         <Outlet />
       </div>
