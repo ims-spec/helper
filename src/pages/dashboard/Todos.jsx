@@ -1,4 +1,5 @@
 import React from 'react'
+import TodoList from '../../containers/todos/TodoList'
 
 export default function Todos() {
   return (
@@ -36,7 +37,7 @@ export default function Todos() {
           width: "804px;",
         }}
       ></canvas>
-
+      <TodoList/>
       <h2>Section title</h2>
       <div className="table-responsive small">
         <table className="table table-striped table-sm">

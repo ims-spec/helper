@@ -1,6 +1,19 @@
-import React from "react";
+import { useState, useEffect } from "react";
+
 
 export default function Home() {
+ const [ supaData, setSupaData] = useState()
+
+
+  useEffect(()=>{
+    const fetchTodos = createAsyncThunk('todos', async () => {
+      const { data, error } = await supabase.from('todos').select('*');
+      if (error) throw error;
+      console.log(data)
+      return setSupaData(data);
+    });
+    fetchTodos()
+  }, [supaData])
   return (
     <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
