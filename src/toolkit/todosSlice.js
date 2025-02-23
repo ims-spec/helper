@@ -29,11 +29,11 @@ export const deleteTodo = createAsyncThunk(
 
 export const updateTodo = createAsyncThunk(
   "toods/updateTodo",
-  async (id, title, content) => {
+  async ({ id, title, content }) => {
     const id2 = Number(id);
     const { error } = await supabase
       .from("todos")
-      .update({ title: title, content: content })
+      .update(title, content)
       .eq("id", id2);
 
     if (error) {
@@ -82,7 +82,8 @@ export const todosSlice = createSlice({
       state.error = null;
     });
     builder.addCase(updateTodo.fulfilled, (state, action) => {
-      state.status = "succeeded";
+     console.log(state.todos)
+
       const updatedTodoIndex = state.todos.findIndex(
         (item) => item.id === action.payload.id
       );
@@ -95,6 +96,7 @@ export const todosSlice = createSlice({
     builder.addCase(updateTodo.rejected, (state, action) => {
       state.status = "failed";
       state.todos = action.error.message;
+      console.log(action.payload);
     });
 
     builder.addCase(deleteTodo.pending, (state) => {

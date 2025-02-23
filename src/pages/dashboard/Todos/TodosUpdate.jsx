@@ -1,25 +1,34 @@
+// import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {  useLocation, useNavigate, useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { updateTodo } from "../../../toolkit/TodosSlice";
 
 export default function TodosUpdate() {
   const [title, setTitle] = useState("");
-  const { content, setContent } = useState("");
+  const [content, setContent] = useState("");
   const dispatch = useDispatch();
+  // const { todos } = useSelector((state) => state.todos.todos);
   const navigate = useNavigate()
-  const {id} = useParams()
-  const location = useLocation()
+  const { id } = useParams();
+  // const location = useLocation()
+  const numericId = parseInt(id);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const id = numericId
+    console.log("ID:" + id)
     dispatch(updateTodo({id, title, content}));
     // navigate("/todos")
   };
-  console.log(location.state)
+
+  //  useEffect(()=>{
+  //   setContent("hello")
+  //   console.log(content)
+  //  }, [])
+
   return (
-    <div className="m-auto" style={{width:"40%"}}>
+    <div className="m-auto" style={{ width: "40%" }}>
       <form onSubmit={handleSubmit} className="mt-3 ">
         <h1 className="h3 mb-3 fw-normal">Please edit todo</h1>
         {/* <h3>Id: {location.state.id}</h3> */}
