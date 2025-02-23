@@ -13,19 +13,19 @@ export default function MenuBar() {
             aria-current="page"
             to="/"
           >
-            <i class="bi bi-house-fill"></i>
+            <i className="bi bi-house-fill"></i>
             Dashboard
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link d-flex align-items-center gap-2" to="todos">
-            <i class="bi bi-list-task"></i>
+            <i className="bi bi-list-task"></i>
             Todo list
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link d-flex align-items-center gap-2" to="budget">
-            <i class="bi bi-currency-dollar"></i>
+            <i className="bi bi-currency-dollar"></i>
             My budget
           </Link>
         </li>
@@ -39,7 +39,7 @@ export default function MenuBar() {
 
         <li className="nav-item">
           <Link className="nav-link d-flex align-items-center gap-2" href="experience">
-          <i class="bi bi-explicit"></i>
+          <i className="bi bi-explicit"></i>
             My experience
           </Link>
         </li>
